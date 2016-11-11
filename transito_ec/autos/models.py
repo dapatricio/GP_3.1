@@ -19,6 +19,8 @@ class Clasevehiculo(models.Model):
     class Meta:
         managed = False
         db_table = 'clasevehiculo'
+    def __unicode__(self):
+        return "%s - %s " %(self.descripcion, self.idclasev)    
     
     
 
@@ -30,6 +32,8 @@ class Combustibles(models.Model):
     class Meta:
         managed = False
         db_table = 'combustibles'
+    def __unicode__(self):
+        return "%s - %s " %(self.nombrecomb, self.idcomb)    
 
 
 class Provincias(models.Model):
@@ -39,6 +43,8 @@ class Provincias(models.Model):
     class Meta:
         managed = False
         db_table = 'provincias'
+    def __unicode__(self):
+        return "%s - %s " %(self.nombreprov, self.idprov)    
 
 
 class Tipovehiculo(models.Model):
@@ -48,6 +54,8 @@ class Tipovehiculo(models.Model):
     class Meta:
         managed = False
         db_table = 'tipovehiculo'
+    def __unicode__(self):
+        return "%s - %s " %(self.nombretipov self.idtipov)
 
 
 class Vehiculos(models.Model):
@@ -67,4 +75,4 @@ class Vehiculos(models.Model):
         db_table = 'vehiculos'
 
     def __unicode__(self):
-    	return "%s - %s -%s" %(self.placa, self.modelo, self.idtipov.nombretipov)
+    	return "%s - %s - %s - %s - %s - %s" %(self.placa, self.modelo, self.marca, self.tonelaje, self.asientos, self.idtipov.nombretipov)
